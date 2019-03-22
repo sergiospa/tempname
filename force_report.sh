@@ -47,7 +47,7 @@ if [[ ! $dst_mail =~ ^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}
 		exit 1
 fi
 
-#Filter for rule_d or group_id
+#Filter for rule_id or group_id
 if [[ $rule_id =~ ^[0-9]+$ ]];
   then
     subject="Report - $day $month $year - Rule $rule_id"
