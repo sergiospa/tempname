@@ -1,0 +1,14 @@
+#decoder
+<decoder name="netuser">
+ <prematch>ossec: output: 'net user':\\nUser accounts for</prematch>
+ <regex offset="after_prematch">-----\\n(\.+)                  \\nThe command</regex>
+ <order>user</order>
+</decoder>
+
+#rule
+<group name="netuser,">
+ <rule id="199000" level="0">
+  <decoded_as>netuser</decoded_as>
+  <description>Output of 'net user' command</description>
+ </rule>
+</group>
