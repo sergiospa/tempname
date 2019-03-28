@@ -8,6 +8,7 @@
 #Gets system's year, month and day.
 year=$(date +%Y)
 month=$(date +%b)
+month=${month^}
 day=$(date +%d)
 
 #Parameter shifting
