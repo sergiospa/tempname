@@ -1,0 +1,21 @@
+
+            # -*- mode: ruby -*-
+            # vi: set ft=ruby :
+
+            Vagrant.configure("2") do |config|
+
+                config.vm.box = "bento/centos-7.2"
+                config.vm.provision "shell", inline: "echo nameserver 8.8.8.8 > /etc/resolv.conf"        
+                config.vm.network "private_network", ip: "11.0.0.10"
+
+                config.vm.provision :shell, path: "docker_installer.sh"
+
+                config.vm.provider "virtualbox" do |vb|
+                    vb.memory = "4096"
+                    vb.cpus = "2"
+                    vb.name = "centos7-10-docker"
+                end
+
+                config.vm.hostname = "centos7-10"   
+
+            end
